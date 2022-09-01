@@ -142,8 +142,8 @@ namespace LiteDB.Engine
         /// </summary>
         public override int Read(byte[] array, int offset, int count)
         {
-            ENSURE(count == PAGE_SIZE, "buffer size must be PAGE_SIZE");
-            ENSURE(this.Position % PAGE_SIZE == 0, "position must be in PAGE_SIZE module");
+            //ENSURE(count == PAGE_SIZE, "buffer size must be PAGE_SIZE");
+            //ENSURE(this.Position % PAGE_SIZE == 0, "position must be in PAGE_SIZE module");
 
             var r = _reader.Read(array, offset, count);
 
@@ -163,8 +163,8 @@ namespace LiteDB.Engine
         /// </summary>
         public override void Write(byte[] array, int offset, int count)
         {
-            ENSURE(count == PAGE_SIZE, "buffer size must be PAGE_SIZE");
-            ENSURE(this.Position % PAGE_SIZE == 0, "position must be in PAGE_SIZE module");
+            ////ENSURE(count == PAGE_SIZE, "buffer size must be PAGE_SIZE");
+            ////ENSURE(this.Position % PAGE_SIZE == 0, "position must be in PAGE_SIZE module");
 
             _writer.Write(array, offset, count);
         }

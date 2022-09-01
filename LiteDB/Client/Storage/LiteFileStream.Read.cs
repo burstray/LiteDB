@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System;                                                                                                                                                                                                                         
 using System.IO;
 using System.Linq;
 using static LiteDB.Constants;
@@ -22,7 +22,7 @@ namespace LiteDB
                 _positionInChunk += bytesToCopy;
                 bytesLeft -= bytesToCopy;
                 offset += bytesToCopy;
-                _streamPosition += bytesToCopy;
+                position += bytesToCopy;
 
                 if (_positionInChunk >= _currentChunkData.Length)
                 {

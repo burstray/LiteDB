@@ -9,7 +9,7 @@ namespace LiteDB
     {
         public override void Write(byte[] buffer, int offset, int count)
         {
-            _streamPosition += count;
+            position += count;
 
             _buffer.Write(buffer, offset, count);
 
@@ -66,7 +66,7 @@ namespace LiteDB
             if (flush)
             {
                 _file.UploadDate = DateTime.Now;
-                _file.Length = _streamPosition;
+                _file.Length = position;
 
                 _files.Upsert(_file);
             }
